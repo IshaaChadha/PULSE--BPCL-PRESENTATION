@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Every Asset Has a Story — Pulse | BPCL Mumbai Refinery</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-brand">PULSE</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<div id="chapter-hud">
+  <div class="hud-left" id="hudLeft">
+    <span class="hud-index" id="hudIndex">00 / 12</span>
+    <span class="hud-title" id="hudTitle">Every Asset Has a Story</span>
+  </div>
+  <div class="hud-brand" id="hudBrand">
+    <span class="brand-chip"><img src="assets/images/bpcl-logo.png" alt="Bharat Petroleum"></span>
+    <span class="brand-chip"><img src="assets/images/exactspace-logo.png" alt="ExactSpace"></span>
+    <span class="hud-pulse-txt"><span class="bars"><span></span><span></span><span></span><span></span></span>PULSE</span>
+  </div>
+</div>
+
+<div id="dots"></div>
+
+<div id="stage">
+<!-- ===================== SCENE 0 — EVERY ASSET HAS A STORY ===================== -->
+<section class="scene" data-scene="0" data-hud="dark">
+  <div class="scene-inner" id="s0">
+    <div class="bg-photo bg-blur-soft" style="background-image:url('assets/images/hero-sunset.jpg'); opacity:0; transition:opacity 3.2s ease;" id="s0bg"></div>
+    <div class="bg-veil" style="background:linear-gradient(180deg, rgba(8,14,26,0.44) 0%, rgba(9,18,34,0.4) 38%, rgba(10,20,36,0.5) 100%);"></div>
+    <div class="grain"></div>
+
+    <!-- refinery silhouette overlay with animated steam + blinking lights -->
+    <svg id="s0svg" viewBox="0 0 1600 900" style="position:absolute; inset:0; width:100%; height:100%;" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <filter id="steamBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9"/></filter>
+        <radialGradient id="lightGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffd98a" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- stacks (simplified industrial silhouette, sits low so photo shows through above) -->
+      <g id="stacks" opacity="0.001">
+        <rect x="120" y="560" width="14" height="200" fill="#0b1220"/>
+        <rect x="210" y="520" width="18" height="240" fill="#0b1220"/>
+        <rect x="330" y="600" width="12" height="160" fill="#0b1220"/>
+        <rect x="1180" y="540" width="16" height="220" fill="#0b1220"/>
+        <rect x="1290" y="580" width="12" height="180" fill="#0b1220"/>
+        <rect x="1400" y="510" width="20" height="250" fill="#0b1220"/>
+      </g>
+      <!-- steam plumes -->
+      <g filter="url(#steamBlur)" opacity="0.55">
+        <ellipse class="steam s1" cx="127" cy="540" rx="16" ry="26" fill="#eef3f8"/>
+        <ellipse class="steam s2" cx="219" cy="500" rx="20" ry="30" fill="#eef3f8"/>
+        <ellipse class="steam s3" cx="1188" cy="520" rx="18" ry="28" fill="#eef3f8"/>
+        <ellipse class="steam s4" cx="1410" cy="490" rx="22" ry="32" fill="#eef3f8"/>
+      </g>
+      <!-- blinking asset lights scattered across the skyline -->
+      <g id="blinkLights"></g>
+    </svg>
+
+    <div class="center-col" style="text-align:center;">
+      <div class="stack" style="align-items:center; gap:22px;">
+        <div class="brand-row" id="s0eyebrow" style="opacity:0; transform:translateY(10px); transition:all 1s var(--ease) .2s;">
+          <span class="brand-chip"><img src="assets/images/bpcl-logo.png" alt="Bharat Petroleum"></span>
+          <span class="brand-label">MUMBAI REFINERY</span>
+          <span class="brand-sep">&middot;</span>
+          <span class="brand-chip"><img src="assets/images/exactspace-logo.png" alt="ExactSpace"></span>
+          <span class="brand-pulse"><span class="bars"><span></span><span></span><span></span><span></span></span>PULSE</span>
+        </div>
+
+        <div class="narr" id="s0narr">
+          <div class="ln" data-t="0">A refinery never sleeps.</div>
+          <div class="ln" data-t="1">Every second, <b>thousands of signals</b> demand attention and thousands of decisions shape operations.</div>
+          <div class="ln" data-t="2">Pulse helps you <b>listen before it breaks.</b></div>
+        </div>
+
+        <h1 id="s0title" style="opacity:0; transform:translateY(18px); transition:all 1.1s var(--ease); font-size:clamp(36px,5vw,68px); color:#fff; margin-top:0; text-shadow:0 4px 24px rgba(0,0,0,0.55);">
+          Every Asset Has a Story
+        </h1>
+        <p id="s0sub" style="opacity:0; transform:translateY(12px); transition:all 1.1s var(--ease) .15s; color:rgba(255,255,255,0.95); font-size:clamp(18px,1.9vw,24px); font-weight:600; letter-spacing:0.03em; font-family:var(--f-mono); text-shadow:0 2px 14px rgba(0,0,0,0.6);">
+          A Day Inside a Modern Refinery
+        </p>
+
+        <button class="js-interact glass-strong" id="s0begin" style="opacity:0; transform:translateY(16px); transition:all 1.1s var(--ease) .3s; margin-top:6px; border:1px solid rgba(255,255,255,0.5); padding:16px 36px; border-radius:999px; display:flex; align-items:center; gap:12px; font-family:var(--f-display); font-size:18px; font-weight:700; color:var(--ink); background:rgba(255,255,255,0.94);">
+          Begin the Journey
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 1 — TOO MUCH INFORMATION, TOO LITTLE TIME ===================== -->
+<section class="scene" data-scene="1" data-hud="dark">
+  <div class="scene-inner" id="s1">
+    <div class="crd-bg"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="max-width:1440px;">
+
+      <!-- secondary engineering screens: additional monitors, easily extensible via .crd-mini blocks -->
+      <div class="crd-mini-row" id="crdMiniRow">
+        <div class="crd-mini" data-i="0"><div class="crd-mini-bezel"><img src="assets/images/equipment-vibration-temp.jpg" alt="P-259A bearing temperature and vibration overview"><span class="crd-live-dot crd-live-dot-sm"></span></div><div class="crd-mini-label">Vibration &amp; Temp</div></div>
+        <div class="crd-mini" data-i="1"><div class="crd-mini-bezel"><img src="assets/images/equipment-temp-status.jpg" alt="P-259A temperature status"></div><div class="crd-mini-label">Temp Status</div></div>
+        <div class="crd-mini" data-i="2"><div class="crd-mini-bezel"><img src="assets/images/equipment-trip-signals-a.jpg" alt="P-259A trip signal grouping"></div><div class="crd-mini-label">Trip Signals</div></div>
+        <div class="crd-mini" data-i="3"><div class="crd-mini-bezel"><img src="assets/images/equipment-trip-signals-b.jpg" alt="P-259B trip signal grouping"></div><div class="crd-mini-label">Trip Signals B</div></div>
+        <div class="crd-mini" data-i="4"><div class="crd-mini-bezel"><img src="assets/images/equipment-vibration-b.jpg" alt="P-259B bearing temperature and vibration overview"></div><div class="crd-mini-label">Vibration B</div></div>
+      </div>
+
+      <div class="crd-rig" id="crdRig">
+
+        <div class="crd-monitor crd-mon-1" id="crdMon1">
+          <div class="crd-bezel">
+            <div class="crd-screen crd-screen-scroll">
+              <img class="crd-scroll-img crd-scroll-1" src="assets/images/dcs-strip.jpg" alt="DCS process screens, scrolling">
+              <span class="crd-live-dot"></span>
+            </div>
+          </div>
+          <div class="crd-label">DCS &middot; Process Overview</div>
+        </div>
+
+        <div class="crd-monitor crd-mon-2" id="crdMon2">
+          <div class="crd-bezel">
+            <div class="crd-screen crd-screen-scroll">
+              <img class="crd-scroll-img crd-scroll-2" id="crdScrollImg" src="assets/images/metadata-strip.jpg" alt="Engineering metadata sheet, scrolling">
+            </div>
+          </div>
+          <div class="crd-label">Engineering Metadata</div>
+        </div>
+
+        <div class="crd-monitor crd-mon-3" id="crdMon3">
+          <div class="crd-bezel">
+            <div class="crd-screen crd-screen-scroll">
+              <img class="crd-scroll-img crd-scroll-3" src="assets/images/pid-strip.jpg" alt="P&amp;ID piping and instrumentation drawings, scrolling">
+            </div>
+          </div>
+          <div class="crd-label">P&amp;ID &middot; Piping &amp; Instrumentation</div>
+        </div>
+
+        <div class="crd-desk"></div>
+        <img class="crd-operator" src="assets/images/operator.png" alt="Industrial operator monitoring the control room, looking toward the screens" aria-hidden="true">
+        <canvas id="crdCanvas"></canvas>
+        <div class="crd-toast" id="crdToast">
+          <span class="crd-toast-dot"></span> New deviation logged
+        </div>
+      </div>
+
+      <div class="crd-tags" id="crdTags" style="margin-top:18px;">
+        <span class="crd-tag" data-i="0">Information Overload</span>
+        <span class="crd-tag" data-i="1">Missed Signals</span>
+        <span class="crd-tag" data-i="2">Slow Decisions</span>
+        <span class="crd-tag" data-i="3">Reactive Maintenance</span>
+      </div>
+
+      <div class="narr compact" id="s1narr" style="margin-top:16px; gap:5px;">
+        <div class="ln" data-t="0">Every day, hundreds of maintenance decisions are made.</div>
+        <div class="ln" data-t="1"><b>Too many decisions. Too much information. Too little time.</b></div>
+        <div class="ln" data-t="2">Engineering expertise should solve problems &mdash; not search for them.</div>
+      </div>
+
+      <div class="crd-final" id="crdFinal">
+        Pulse helps engineers discover what matters, diagnose with confidence, and recommend timely action.
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 2 - FROM RAW DATA TO ENGINEERING INTELLIGENCE ===================== -->
+<section class="scene" data-scene="2" data-hud="dark">
+  <div class="scene-inner cs-scene" id="s2" data-cs="pl">
+    <div class="cs-bg"></div>
+    <div class="grain"></div>
+
+    <div class="center-col cs-col" style="max-width:1780px;">
+      <div class="cs-head">
+        <div class="eyebrow" style="color:var(--cyan-400);">THE PULSE PIPELINE</div>
+        <h2 style="font-size:clamp(22px,2.5vw,34px);">From Raw Data to Engineering Intelligence</h2>
+      </div>
+
+      <div class="pl-canvas" id="plCanvas">
+        <svg class="pl-connectors" id="plConnectors" viewBox="0 0 1657 430" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="plFlowGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#2f6fed" stop-opacity="0.9"/>
+            </linearGradient>
+          </defs>
+          <path id="plPathRawProc" class="pl-conn" d="M242,196 L283,196"/>
+          <path id="plPathProcBench" class="pl-conn" d="M525,196 L566,81"/>
+          <path id="plPathProcPred" class="pl-conn" d="M525,196 L566,311"/>
+          <path id="plPathBenchFT" class="pl-conn" d="M808,81 L849,196"/>
+          <path id="plPathPredFT" class="pl-conn" d="M808,311 L849,196"/>
+          <path id="plPathFTInc" class="pl-conn" d="M1091,196 L1132,196"/>
+          <path id="plPathIncQ" class="pl-conn" d="M1374,196 L1415,196"/>
+          <circle id="plDotRawProc" class="pl-flowdot" r="7" cx="242" cy="196"/>
+          <circle id="plDotProcBench" class="pl-flowdot" r="7" cx="525" cy="196"/>
+          <circle id="plDotProcPred" class="pl-flowdot" r="7" cx="525" cy="196"/>
+          <circle id="plDotBenchFT" class="pl-flowdot" r="7" cx="808" cy="81"/>
+          <circle id="plDotPredFT" class="pl-flowdot" r="7" cx="808" cy="311"/>
+          <circle id="plDotFTInc" class="pl-flowdot" r="7" cx="1091" cy="196"/>
+          <circle id="plDotIncQ" class="pl-flowdot" r="7" cx="1374" cy="196"/>
+        </svg>
+
+        <div class="pl-node" id="plNodeRaw" style="left:0px; top:146px;">
+          <div class="pl-node-frame" style="height:100px;"><img src="assets/images/pipeline-raw.jpg" alt="Real Pulse trend: raw pump shaft vibration signal" class="pl-node-img" style="object-fit:contain;"></div>
+          <div class="pl-node-label">Raw Data</div>
+        </div>
+
+        <div class="pl-node" id="plNodeProcessed" style="left:283px; top:146px;">
+          <div class="pl-node-frame" style="height:100px;"><img src="assets/images/pipeline-processed.jpg" alt="Real Pulse trend: validated and processed vibration signal with expected band" class="pl-node-img" style="object-fit:contain;"></div>
+          <div class="pl-node-label">Validated &amp; Processed</div>
+        </div>
+
+        <div class="pl-node" id="plNodeBenchmark" style="left:566px; top:0px;">
+          <div class="pl-node-frame pl-node-frame-scroll">
+            <img src="assets/images/pipeline-benchmark-strip.jpg" alt="Real Pulse benchmarking chart, and detail showing the deviation flagged before the 75 alarm limit" class="pl-node-img pl-scroll-img">
+          </div>
+          <div class="pl-node-label">Benchmarking</div>
+        </div>
+
+        <div class="pl-node" id="plNodePredict" style="left:566px; top:230px;">
+          <div class="pl-node-frame"><img src="assets/images/pipeline-predict.jpg" alt="Real Pulse prediction chart: predicted vs actual with expected bound" class="pl-node-img" style="object-fit:contain;"></div>
+          <div class="pl-node-label">Predictive Models</div>
+        </div>
+
+        <div class="pl-node" id="plNodeFaultTree" style="left:849px; top:115px;">
+          <div class="pl-node-frame"><img src="assets/images/pipeline-faulttree.jpg" alt="Real Pulse fault tree engine: engineering diagnostics mapped to possible causes" class="pl-node-img" style="object-fit:contain;"></div>
+          <div class="pl-node-label">Fault Tree Engine</div>
+        </div>
+
+        <div class="pl-node" id="plNodeIncident" style="left:1132px; top:115px;">
+          <div class="pl-node-frame"><img src="assets/images/pipeline-incident.jpg" alt="Real Pulse incident: motor bearing temperature high with root cause and recommendation" class="pl-node-img" style="object-fit:contain;"></div>
+          <div class="pl-node-label">Incident Generation</div>
+        </div>
+
+        <div class="pl-node" id="plNodeQuestion" style="left:1415px; top:115px;">
+          <div class="pl-node-frame pl-node-question">
+            <div class="pl-q-line">How do I get value?</div>
+            <div class="pl-q-mark">???</div>
+            <div class="pl-q-line">Where is my money saved?</div>
+          </div>
+          <div class="pl-node-label">&nbsp;</div>
+        </div>
+      </div>
+
+      <div class="pl-caption" id="plCaption">Click Continue to begin the journey.</div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 3 - TURNING DATA INTO AWARENESS ===================== -->
+<section class="scene" data-scene="3" data-hud="dark">
+  <div class="scene-inner" id="s3">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, #10233f 0%, #060c18 75%);"></div>
+    <div class="grain"></div>
+    <canvas id="s3canvas" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
+
+    <div class="center-col">
+      <div class="narr" style="margin-bottom:10px;" id="s3narr">
+        <div class="ln" data-t="0">PLCs. DCS. SCADA. Historians. Cloud.</div>
+        <div class="ln" data-t="1">Every stream converges into <b>one intelligence layer.</b></div>
+        <div class="ln" data-t="2">Not just data. <b>Visibility.</b></div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:center; gap:40px; margin-top:26px; flex-wrap:wrap;" id="s3flow">
+        <div class="stack" style="gap:10px;" id="s3sources">
+          <div class="s3src">PLC</div>
+          <div class="s3src">DCS</div>
+          <div class="s3src">SCADA</div>
+          <div class="s3src">Historian</div>
+          <div class="s3src">MQTT</div>
+          <div class="s3src">REST API</div>
+        </div>
+
+        <div id="s3pulse" class="js-interact glass-strong" style="width:132px; height:132px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; position:relative; border:1px solid rgba(255,255,255,0.4);">
+          <span class="interact-badge">▶</span>
+          <span class="bars" style="height:16px; display:flex; gap:2px; align-items:flex-end;"><span style="width:3px;height:6px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite;"></span><span style="width:3px;height:16px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .15s;"></span><span style="width:3px;height:10px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .3s;"></span></span>
+          <span style="font-family:var(--f-display); font-weight:700; font-size:16px; color:#fff;">PULSE</span>
+          <span style="font-family:var(--f-mono); font-size:9px; color:rgba(255,255,255,0.6); letter-spacing:0.12em;">DIGITAL TWIN</span>
+        </div>
+
+        <div class="stack" style="gap:10px;" id="s3twin">
+          <div class="s3metric" data-kind="temp"><span class="s3mlabel">Temperature</span><span class="s3mval">68.2°C</span></div>
+          <div class="s3metric" data-kind="press"><span class="s3mlabel">Pressure</span><span class="s3mval">4.8 kg/cm²</span></div>
+          <div class="s3metric" data-kind="flow"><span class="s3mlabel">Flow</span><span class="s3mval">212 m³/h</span></div>
+          <div class="s3metric" data-kind="vib"><span class="s3mlabel">Vibration</span><span class="s3mval">2.1 mm/s</span></div>
+          <div class="s3metric" data-kind="health"><span class="s3mlabel">Overall health</span><span class="s3mval" style="color:var(--green-500);">Healthy</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 4 — A NORMAL SHIFT ===================== -->
+<section class="scene" data-scene="4" data-hud="light">
+  <div class="scene-inner" id="s4">
+    <div class="bg-photo bg-blur" style="background-image:url('assets/images/hero-gate.jpg'); opacity:0.5;"></div>
+    <div class="bg-veil-light"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="display:flex; gap:56px; align-items:center; flex-wrap:wrap; justify-content:center;">
+      <div class="stack" style="max-width:420px; gap:18px;">
+        <div class="eyebrow" style="color:var(--blue-700);">CHAPTER 4</div>
+        <h2 style="font-size:clamp(28px,3.4vw,44px); color:var(--ink);">A normal shift looks quiet.</h2>
+        <p style="font-size:17px; color:var(--ink-soft); line-height:1.6;">Most hours pass without incident. Assets run inside their expected range, and the plant hums along — calm, steady, unremarkable. That calm is the baseline every story is measured against.</p>
+        <div class="tap-tip" style="align-self:flex-start;">Click the ops centre to look closer</div>
+      </div>
+
+      <div class="js-interact" id="s4frame" style="position:relative;">
+        <span class="interact-badge" style="top:6px; right:6px;">▶</span>
+        <div class="glass-strong" style="padding:14px; border-radius:20px; transform:perspective(1400px) rotateY(-4deg) rotateX(1deg);">
+          <img src="assets/images/ops-health.jpg" alt="Pulse Ops Centre — assets healthy overview" style="width:min(48vw,640px); display:block; border-radius:12px; box-shadow:0 20px 40px -18px rgba(13,42,92,0.35);">
+        </div>
+        <div class="s4pulse-glow"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 5 — ONE ASSET BEGINS TO WHISPER ===================== -->
+<section class="scene" data-scene="5" data-hud="light">
+  <div class="scene-inner" id="s5">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg,#eef2f6,#e4eaf1);"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="max-width:1200px;">
+      <div class="stack" style="align-items:center; gap:8px; margin-bottom:22px; text-align:center;">
+        <div class="eyebrow" style="color:var(--amber-600);">CHAPTER 5 · ISOM · 62-K-101A</div>
+        <h2 style="font-size:clamp(26px,3vw,38px); color:var(--ink);">One asset begins to whisper.</h2>
+        <p style="color:var(--ink-soft); font-size:16px; max-width:640px;">Nothing alarms. Nothing trips. But the lube oil temperature has quietly stepped away from its usual baseline.</p>
+      </div>
+
+      <div class="js-interact glass-strong" id="s5frame" style="padding:16px; border-radius:20px; position:relative;">
+        <span class="interact-badge">▶</span>
+        <img src="assets/images/ops-trend.jpg" alt="Lube oil temperature trend showing baseline drift" style="width:min(80vw,980px); display:block; border-radius:12px;">
+        <div id="s5ring" style="position:absolute; width:64px; height:64px; border-radius:50%; border:2px solid var(--amber-500); box-shadow:0 0 0 6px rgba(242,166,61,0.18); animation:whisperring 2s ease-in-out infinite;"></div>
+      </div>
+      <div class="tap-tip" style="margin-top:16px;">Click the flagged drift to continue</div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 6 — REAL SUCCESS STORY (CASE STUDY 1) ===================== -->
+<section class="scene" data-scene="6" data-hud="dark">
+  <div class="scene-inner cs-scene" id="s6" data-cs="cs1">
+    <div class="cs-bg"></div>
+    <div class="grain"></div>
+    <div class="cs-progress" id="cs1progress">Step 1 / 10 &middot; Establishing the equipment</div>
+
+    <div class="center-col cs-col">
+      <div class="cs-head">
+        <div class="eyebrow" style="color:var(--cyan-400);">REAL SUCCESS STORY</div>
+        <h2>Compressor &middot; High Axial Displacement</h2>
+      </div>
+
+      <div class="cs-stage" id="cs1stage">
+
+        <div class="cs-phase on" data-phase="equipment">
+          <div class="cs-equip-frame">
+            <img src="assets/images/case1-equipment.jpg" alt="Reciprocating compressor cross-section illustration" class="cs-equip-img">
+          </div>
+          <div class="cs-phase-caption">This is the equipment we are monitoring &mdash; a reciprocating compressor.</div>
+        </div>
+
+        <div class="cs-phase" data-phase="problem">
+          <div class="cs-card-big">
+            <div class="cs-card-eyebrow">Problem Statement</div>
+            <div class="cs-card-text">Rotor axial displacement on the compressor began trending upward &mdash; gradually, and well before any operational limit was reached.</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="graph">
+          <div class="cs-graph-frame">
+            <img src="assets/images/case1-graph.jpg" alt="Actual Pulse trend graph: REC PLUS Compressor Female Axial Displacement" class="cs-graph-img">
+            <div class="cs-graph-ring" id="cs1ring"></div>
+          </div>
+          <div class="cs-phase-caption" id="cs1graphcap">The trend line quietly climbs toward the alarm band.</div>
+        </div>
+
+        <div class="cs-phase" data-phase="observe">
+          <div class="cs-checklist" id="cs1checklist">
+            <div class="cs-check" data-i="0"><span class="cs-checkmark">&#10003;</span>Rotor axial displacement trending upward</div>
+            <div class="cs-check" data-i="1"><span class="cs-checkmark">&#10003;</span>Compressor differential pressure shifting</div>
+            <div class="cs-check" data-i="2"><span class="cs-checkmark">&#10003;</span>No abnormal vibration or temperature signs</div>
+            <div class="cs-check" data-i="3"><span class="cs-checkmark">&#10003;</span>Pattern warranted further investigation</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="recommend">
+          <div class="cs-recolist" id="cs1recolist">
+            <div class="cs-reco" data-i="0"><span class="cs-recoicon">&#128269;</span><span>Inspect the suction isolation valve</span></div>
+            <div class="cs-reco" data-i="1"><span class="cs-recoicon">&#128202;</span><span>Review differential pressure across the compressor</span></div>
+            <div class="cs-reco" data-i="2"><span class="cs-recoicon">&#128101;</span><span>Engage the site engineering team</span></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="action">
+          <div class="cs-invest" id="cs1invest">
+            <div class="cs-step" data-i="0"><span class="cs-dot"></span><span class="cs-label">Inspection</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="1"><span class="cs-dot"></span><span class="cs-label">Engineering Review</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="2"><span class="cs-dot"></span><span class="cs-label">Valve Isolated</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="3"><span class="cs-dot"></span><span class="cs-label">Verification</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="4"><span class="cs-dot"></span><span class="cs-label">Return to Service</span></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="rootcause">
+          <div class="cs-chain" id="cs1chain">
+            <div class="cs-chain-item" data-i="0">Leaking suction isolation valve</div>
+            <div class="cs-chain-arrow">&#8595;</div>
+            <div class="cs-chain-item" data-i="1">Differential pressure changed</div>
+            <div class="cs-chain-arrow">&#8595;</div>
+            <div class="cs-chain-item" data-i="2">Rotor axial displacement increased</div>
+            <div class="cs-chain-arrow">&#8595;</div>
+            <div class="cs-chain-item" data-i="3">Compressor behaviour changed</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="resolve">
+          <div class="cs-resolve-big">
+            <span class="cs-resolve-dot-big" id="cs1resdot"></span>
+            <div class="cs-resolve-text">Isolating the leaking valve restored differential pressure. Axial displacement settled back into its healthy range.</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="value">
+          <div class="cs-kpi-row" id="cs1kpis">
+            <div class="cs-kpi" data-i="0"><div class="cs-kpi-label">Maintenance Cost Avoided</div><div class="cs-kpi-val"><span>&#8377;</span><span class="cs-count" data-target="40">0</span><span> Lakhs</span></div></div>
+            <div class="cs-kpi" data-i="1"><div class="cs-kpi-label">Production Loss Prevented</div><div class="cs-kpi-val"><span>&#8377;</span><span class="cs-count" data-target="60">0</span><span> Lakhs</span></div></div>
+            <div class="cs-kpi" data-i="2"><div class="cs-kpi-label">Operational Continuity</div><div class="cs-kpi-val" style="font-size:16px;">Compressor stayed available</div></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="summary">
+          <div class="cs-timeline">
+            <div class="cs-tl-item">Problem</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Detection</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Analysis</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Recommendation</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Action</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item cs-tl-healthy">Healthy Operation</div>
+          </div>
+          <div class="cs-phase-caption" style="margin-top:18px;">Early operational awareness enabled informed engineering decisions.</div>
+        </div>
+
+      </div>
+
+      <div class="cs-minicontrols">
+        <button class="cs-minibtn" id="cs1replay" title="Replay this step (R)">&#8635; Replay step</button>
+        <button class="cs-minibtn" id="cs1restart" title="Restart this case study">&#8634; Restart case study</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCENE 7 — REAL SUCCESS STORY (CASE STUDY 2) ===================== -->
+<section class="scene" data-scene="7" data-hud="dark">
+  <div class="scene-inner cs-scene" id="s7" data-cs="cs2">
+    <div class="cs-bg"></div>
+    <div class="grain"></div>
+    <div class="cs-progress" id="cs2progress">Step 1 / 10 &middot; Establishing the equipment</div>
+
+    <div class="center-col cs-col">
+      <div class="cs-head">
+        <div class="eyebrow" style="color:var(--cyan-400);">ANOTHER EXAMPLE</div>
+        <h2>Damaged Coupling Shim Detection</h2>
+        <p class="cs-subtitle">IVP-101A &middot; VGOHDT Feed Pump</p>
+      </div>
+
+      <div class="cs-stage" id="cs2stage">
+
+        <div class="cs-phase on" data-phase="equipment">
+          <div class="cs-equip-frame">
+            <svg viewBox="0 0 200 160" class="cs-equip-svg">
+              <rect x="30" y="70" width="90" height="50" rx="6" fill="none" stroke="#6fa1ff" stroke-width="3"/>
+              <circle cx="120" cy="95" r="26" fill="none" stroke="#6fa1ff" stroke-width="3"/>
+              <rect x="146" y="80" width="34" height="30" rx="4" fill="none" stroke="#6fa1ff" stroke-width="3"/>
+              <line x1="30" y1="120" x2="30" y2="140" stroke="#6fa1ff" stroke-width="3"/>
+              <line x1="120" y1="140" x2="120" y2="121" stroke="#6fa1ff" stroke-width="3"/>
+              <line x1="30" y1="140" x2="160" y2="140" stroke="#6fa1ff" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="cs-phase-caption">This is the equipment we are monitoring &mdash; the IVP-101A VGOHDT feed pump.</div>
+        </div>
+
+        <div class="cs-phase" data-phase="problem">
+          <div class="cs-card-big">
+            <div class="cs-card-eyebrow">Problem Statement</div>
+            <div class="cs-card-text">An alert was generated after vibration on the PRT drive-end climbed from 12 to 55 &micro;m &mdash; with the equipment still appearing outwardly healthy.</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="graph">
+          <div class="cs-graph-frame">
+            <img src="assets/images/case2-graph.jpg" alt="Actual Pulse alert screenshot: PRT vibration trend with Alert Region annotation" class="cs-graph-img">
+            <div class="cs-graph-ring" id="cs2ring"></div>
+          </div>
+          <div class="cs-phase-caption">No alarm, no red flag &mdash; just a steadily rising trend.</div>
+        </div>
+
+        <div class="cs-phase" data-phase="observe">
+          <div class="cs-checklist" id="cs2checklist">
+            <div class="cs-check" data-i="0"><span class="cs-checkmark">&#10003;</span>Vibration increased from 12 to 55 &micro;m</div>
+            <div class="cs-check" data-i="1"><span class="cs-checkmark">&#10003;</span>Probe found healthy on inspection</div>
+            <div class="cs-check" data-i="2"><span class="cs-checkmark">&#10003;</span>Trend did not match a sensor-fault pattern</div>
+            <div class="cs-check" data-i="3"><span class="cs-checkmark">&#10003;</span>Detailed coupling inspection warranted</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="recommend">
+          <div class="cs-recolist" id="cs2recolist">
+            <div class="cs-reco" data-i="0"><span class="cs-recoicon">&#128269;</span><span>Recommend a detailed coupling inspection</span></div>
+            <div class="cs-reco" data-i="1"><span class="cs-recoicon">&#129513;</span><span>Involve the instrumentation team to rule out a probe fault</span></div>
+            <div class="cs-reco" data-i="2"><span class="cs-recoicon">&#128197;</span><span>Schedule inspection at the next available window</span></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="action">
+          <div class="cs-invest" id="cs2invest">
+            <div class="cs-step" data-i="0"><span class="cs-dot"></span><span class="cs-label">Inspection</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="1"><span class="cs-dot"></span><span class="cs-label">Engineering Review</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="2"><span class="cs-dot"></span><span class="cs-label">Shim Replaced</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="3"><span class="cs-dot"></span><span class="cs-label">Verification</span></div>
+            <div class="cs-link"></div>
+            <div class="cs-step" data-i="4"><span class="cs-dot"></span><span class="cs-label">Return to Service</span></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="rootcause">
+          <div class="cs-chain-row">
+            <div class="cs-chain-photo">
+              <img src="assets/images/case2-shimphoto.jpg" alt="Actual photograph of the damaged coupling shim pack" class="cs-chain-photo-img">
+            </div>
+            <div class="cs-chain" id="cs2chain">
+              <div class="cs-chain-item" data-i="0">Damaged coupling shim</div>
+              <div class="cs-chain-arrow">&#8595;</div>
+              <div class="cs-chain-item" data-i="1">Vibration increased</div>
+              <div class="cs-chain-arrow">&#8595;</div>
+              <div class="cs-chain-item" data-i="2">Shim replaced</div>
+              <div class="cs-chain-arrow">&#8595;</div>
+              <div class="cs-chain-item" data-i="3">Normal operation restored</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="resolve">
+          <div class="cs-resolve-big">
+            <span class="cs-resolve-dot-big" id="cs2resdot"></span>
+            <div class="cs-resolve-text">The damaged shim pack was replaced. Vibration returned from 55 &micro;m to 15 &micro;m &mdash; back within the healthy band.</div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="value">
+          <div class="cs-kpi-row" id="cs2kpis">
+            <div class="cs-kpi" data-i="0"><div class="cs-kpi-label">Avoided</div><div class="cs-kpi-val" style="font-size:15px;">Unplanned trip of IVP-101A</div></div>
+            <div class="cs-kpi" data-i="1"><div class="cs-kpi-label">Improved</div><div class="cs-kpi-val" style="font-size:15px;">Reliability &amp; uptime</div></div>
+            <div class="cs-kpi" data-i="2"><div class="cs-kpi-label">Verified</div><div class="cs-kpi-val" style="font-size:15px;">Correct root cause</div></div>
+          </div>
+        </div>
+
+        <div class="cs-phase" data-phase="summary">
+          <div class="cs-timeline">
+            <div class="cs-tl-item">Problem</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Detection</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Analysis</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Recommendation</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item">Action</div><div class="cs-tl-arrow">&#8594;</div>
+            <div class="cs-tl-item cs-tl-healthy">Healthy Operation</div>
+          </div>
+          <div class="cs-phase-caption" style="margin-top:18px;">Data told a different story &mdash; engineering knowledge completed the picture.</div>
+        </div>
+
+      </div>
+
+      <div class="cs-minicontrols">
+        <button class="cs-minibtn" id="cs2replay" title="Replay this step (R)">&#8635; Replay step</button>
+        <button class="cs-minibtn" id="cs2restart" title="Restart this case study">&#8634; Restart case study</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 8 — VALUE BEYOND PREDICTION ===================== -->
+<section class="scene" data-scene="8" data-hud="light">
+  <div class="scene-inner" id="s8">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg,#eef2f6,#e8edf3);"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="max-width:1200px;">
+      <div class="stack" style="align-items:center; gap:8px; margin-bottom:34px; text-align:center;">
+        <div class="eyebrow" style="color:var(--blue-700);">CHAPTER 8</div>
+        <h2 style="font-size:clamp(26px,3vw,40px); color:var(--ink);">Value beyond prediction.</h2>
+        <p style="color:var(--ink-soft); font-size:16px; max-width:640px;">Early awareness changes the shape of the whole day — not just the moment of the alarm.</p>
+      </div>
+
+      <div id="s8grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; width:min(90vw,1080px);">
+        <div class="js-interact s8card" data-i="0">
+          <span class="interact-badge">▶</span>
+          <div class="s8icon">◎</div>
+          <div class="s8h">Visibility</div>
+          <div class="s8p">A clearer, plant-wide view of asset health — not isolated alarms.</div>
+        </div>
+        <div class="s8card" data-i="1">
+          <div class="s8icon">◔</div>
+          <div class="s8h">Planning</div>
+          <div class="s8p">Maintenance can be planned around evidence, rather than reaction.</div>
+        </div>
+        <div class="s8card" data-i="2">
+          <div class="s8icon">◑</div>
+          <div class="s8h">Confidence</div>
+          <div class="s8p">Engineers act on deviations earlier, with more context behind the call.</div>
+        </div>
+        <div class="s8card" data-i="3">
+          <div class="s8icon">◕</div>
+          <div class="s8h">Collaboration</div>
+          <div class="s8p">One shared view that operations, maintenance and reliability all trust.</div>
+        </div>
+      </div>
+      <div class="tap-tip" style="margin-top:22px;">Click "Visibility" to reveal the rest</div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 9 — MEASURING SUCCESS ===================== -->
+<section class="scene" data-scene="9" data-hud="light">
+  <div class="scene-inner" id="s9">
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg,#eef2f6,#e4eaf1);"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="max-width:1300px;">
+      <div class="stack" style="align-items:center; gap:8px; margin-bottom:22px; text-align:center;">
+        <div class="eyebrow" style="color:var(--blue-700);">CHAPTER 9</div>
+        <h2 style="font-size:clamp(26px,3vw,38px); color:var(--ink);">Reliability is measured over time.</h2>
+        <p style="color:var(--ink-soft); font-size:16px; max-width:680px;">Not in a single alarm, but in a trend line that keeps pointing the right way — illustrative view from Pulse's management dashboard.</p>
+      </div>
+
+      <div class="js-interact glass-strong" id="s9frame" style="padding:16px; border-radius:20px; position:relative;">
+        <span class="interact-badge">▶</span>
+        <img src="assets/images/mgmt-dash.jpg" alt="Pulse management dashboard — monthly benefits and process parameters" style="width:min(84vw,1080px); display:block; border-radius:12px;">
+      </div>
+      <div class="tap-tip" style="margin-top:16px;">Click the dashboard to expand parameters</div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 10 — BUILDING A SMARTER REFINERY TOGETHER ===================== -->
+<section class="scene" data-scene="10" data-hud="dark">
+  <div class="scene-inner" id="s10">
+    <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 40%, #0f2340 0%, #060c18 78%);"></div>
+    <div class="grain"></div>
+    <canvas id="s10canvas" style="position:absolute; inset:0; width:100%; height:100%;"></canvas>
+
+    <div class="center-col">
+      <div class="narr" style="margin-bottom:8px;" id="s10narr">
+        <div class="ln" data-t="0">One refinery. <b>Many disciplines.</b></div>
+        <div class="ln" data-t="1">One shared view, built together.</div>
+      </div>
+
+      <div id="s10ring" class="js-interact" style="position:relative; width:min(80vw,880px); height:min(60vw,560px); margin-top:20px;">
+        <span class="interact-badge" style="left:50%; top:50%;">▶</span>
+        <div id="s10center" class="glass-strong" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:110px; height:110px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; font-family:var(--f-display); font-weight:700; font-size:13px; color:#fff; border:1px solid rgba(255,255,255,0.4);">Refinery</div>
+        <div class="s10node" data-i="0">Operations</div>
+        <div class="s10node" data-i="1">Maintenance</div>
+        <div class="s10node" data-i="2">Reliability</div>
+        <div class="s10node" data-i="3">Inspection</div>
+        <div class="s10node" data-i="4">Instrumentation</div>
+        <div class="s10node" data-i="5">Electrical</div>
+        <div class="s10node" data-i="6">Digital Transformation</div>
+        <div class="s10node" data-i="7">Leadership</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 11 — FUTURE AI ASSISTANT ===================== -->
+<section class="scene" data-scene="11" data-hud="dark">
+  <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 30%, #10233f 0%, #060c18 75%);"></div>
+  <div class="grain"></div>
+  <div class="scene-inner" id="s11">
+    <div class="center-col" style="max-width:900px; text-align:center;">
+      <div class="eyebrow" style="color:var(--cyan-400);">CHAPTER 11 · CONCEPT PREVIEW</div>
+      <h2 style="font-size:clamp(26px,3.2vw,42px); color:#fff; margin:14px 0 10px;">A future assistant for the refinery.</h2>
+      <p style="color:rgba(255,255,255,0.7); font-size:16px; max-width:620px; margin:0 auto 30px;">A direction we're exploring: asking a question in plain language, and getting an answer grounded in the plant's own data.</p>
+
+      <div class="js-interact" id="s11avatar" style="width:74px; height:74px; border-radius:50%; margin:0 auto 22px; background:radial-gradient(circle,#2f6fed,#0d2a5c); display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 0 40px rgba(47,111,237,0.45);">
+        <span class="interact-badge">▶</span>
+        <span class="bars" style="height:20px; display:flex; gap:3px; align-items:flex-end;">
+          <span style="width:4px;height:8px;background:#fff;border-radius:2px;animation:barpulse 1.4s ease-in-out infinite;"></span>
+          <span style="width:4px;height:20px;background:#fff;border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .15s;"></span>
+          <span style="width:4px;height:13px;background:#fff;border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .3s;"></span>
+        </span>
+      </div>
+
+      <div id="s11chat" class="stack" style="gap:12px; max-width:560px; margin:0 auto; opacity:0; transition:opacity .8s var(--ease);">
+        <div class="glass-strong s11bubble s11q">"How is ISOM trending against last week?"</div>
+        <div class="glass-strong s11bubble s11a">Conceptually: the assistant would surface the relevant trend, flag anything drifting, and point to the deviations behind it — grounded in Pulse's own data, not a generic answer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===================== SCENE 12 — CLOSING SCENE ===================== -->
+<section class="scene" data-scene="12" data-hud="dark">
+  <div class="scene-inner" id="s12">
+    <div class="bg-photo bg-blur" style="background-image:url('assets/images/hero-sunset.jpg'); filter:blur(20px) brightness(0.4) saturate(1.05); transform:scale(1.15);"></div>
+    <div class="bg-veil"></div>
+    <div class="grain"></div>
+
+    <div class="center-col" style="text-align:center;">
+      <div class="narr" id="s12narr" style="gap:14px;">
+        <div class="ln" data-t="0" style="font-size:clamp(30px,4.4vw,58px);">Better Visibility.</div>
+        <div class="ln" data-t="1" style="font-size:clamp(30px,4.4vw,58px);">Better Decisions.</div>
+        <div class="ln" data-t="2" style="font-size:clamp(30px,4.4vw,58px);">Better Reliability.</div>
+      </div>
+
+      <div id="s12logo" style="opacity:0; transform:translateY(14px); transition:all 1.2s var(--ease); margin-top:52px; display:flex; align-items:center; gap:12px; justify-content:center;">
+        <span class="bars" style="height:26px; display:flex; gap:3px; align-items:flex-end;">
+          <span style="width:5px;height:10px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite;"></span>
+          <span style="width:5px;height:26px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .15s;"></span>
+          <span style="width:5px;height:16px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .3s;"></span>
+          <span style="width:5px;height:22px;background:var(--cyan-400);border-radius:2px;animation:barpulse 1.4s ease-in-out infinite .45s;"></span>
+        </span>
+        <span style="font-family:var(--f-display); font-weight:700; font-size:30px; color:#fff; letter-spacing:0.02em;">pulse</span>
+      </div>
+      <div style="margin-top:8px; opacity:0; transition:opacity 1.2s var(--ease) .3s;" id="s12sub">
+        <span style="font-family:var(--f-mono); font-size:12px; letter-spacing:0.16em; color:rgba(255,255,255,0.55);">ExactSpace · Predictive Maintenance</span>
+      </div>
+
+      <button class="dock-btn" id="s12restart" style="margin-top:40px; opacity:0; transition:opacity 1.2s var(--ease) .5s; color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:999px; padding:12px 22px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+        Replay the Journey
+      </button>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div id="pulse-rail">
+  <svg viewBox="0 0 1600 64" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="pulseGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#2f6fed" stop-opacity="0"/>
+        <stop offset="12%" stop-color="#2f6fed" stop-opacity="0.9"/>
+        <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
+        <stop offset="88%" stop-color="#2f6fed" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#2f6fed" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path id="pulseLine" class="pulse-path" d="M0,32 L1600,32"/>
+    <circle id="pulseDot" class="pulse-dot" r="3.4" cx="0" cy="32"/>
+  </svg>
+</div>
+
+<div id="dock">
+  <div class="dock-hint" id="dockHint">Click the highlighted element to continue</div>
+  <button class="dock-btn" id="btnPrev" title="Back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    Back
+  </button>
+  <div class="dock-sep"></div>
+  <button class="dock-btn" id="btnHome" title="Home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>
+  </button>
+  <button class="dock-btn" id="btnRestart" title="Replay from the start">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+    Replay
+  </button>
+  <div class="dock-sep"></div>
+  <button class="dock-btn primary" id="btnNext">
+    Continue
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
